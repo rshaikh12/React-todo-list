@@ -3,7 +3,7 @@ import CreateTask from '../modals/CreateTask'
 import Card from './Card';
 
 const TodoList = () => {
-    const [modal, setModal] = useState(false);
+    const [modal1, setModal] = useState(false);
     const [taskList, setTaskList] = useState([])
     
     useEffect(() => {
@@ -33,7 +33,7 @@ const TodoList = () => {
     }
 
     const toggle = () => {
-        setModal(!modal);
+        setModal(!modal1);
     }
 
     const saveTask = (taskObj) => {
@@ -54,7 +54,7 @@ const TodoList = () => {
             <div className = "task-container">
             {taskList && taskList.map((obj , index) => <Card taskObj = {obj} index = {index} deleteTask = {deleteTask} updateListArray = {updateListArray}/> )}
             </div>
-            <CreateTask toggle = {toggle} modal = {modal} save = {saveTask}/>
+            <CreateTask toggle = {toggle} modal = {modal1} save = {saveTask}/>
         </>
     );
 };
